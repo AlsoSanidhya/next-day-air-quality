@@ -10,10 +10,17 @@ live forecasting service.
 ## Current progress
 
 - Project repository created.
-- Python environment setup in progress.
+- Python 3.13.9 environment installed and setup check passed.
 - Dataset exploration and model training have not started.
 
 ## Step 1: Check the Python setup
+
+To recreate the environment with Python 3.13:
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+```
 
 Open this folder in VS Code. Select `.venv/Scripts/python.exe` using
 **Python: Select Interpreter**, then run `check_setup.py`.
