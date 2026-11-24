@@ -1,0 +1,184 @@
+origin_date,target_date,actual,LogisticRegression,DecisionTree,RandomForestClassifier
+2019-12-31,2020-01-01,Severe,Very Poor,Severe,Severe
+2020-01-01,2020-01-02,Severe,Severe,Severe,Severe
+2020-01-02,2020-01-03,Severe,Severe,Severe,Severe
+2020-01-03,2020-01-04,Very Poor,Very Poor,Very Poor,Severe
+2020-01-04,2020-01-05,Very Poor,Very Poor,Very Poor,Very Poor
+2020-01-05,2020-01-06,Very Poor,Very Poor,Very Poor,Very Poor
+2020-01-06,2020-01-07,Poor,Very Poor,Very Poor,Very Poor
+2020-01-07,2020-01-08,Poor,Poor,Poor,Very Poor
+2020-01-08,2020-01-09,Poor,Very Poor,Poor,Very Poor
+2020-01-09,2020-01-10,Poor,Poor,Poor,Poor
+2020-01-10,2020-01-11,Very Poor,Poor,Very Poor,Very Poor
+2020-01-11,2020-01-12,Very Poor,Very Poor,Very Poor,Very Poor
+2020-01-12,2020-01-13,Very Poor,Very Poor,Very Poor,Very Poor
+2020-01-13,2020-01-14,Very Poor,Very Poor,Very Poor,Very Poor
+2020-01-14,2020-01-15,Poor,Poor,Poor,Very Poor
+2020-01-15,2020-01-16,Poor,Poor,Poor,Poor
+2020-01-16,2020-01-17,Poor,Poor,Very Poor,Very Poor
+2020-01-17,2020-01-18,Poor,Poor,Poor,Poor
+2020-01-18,2020-01-19,Poor,Poor,Poor,Poor
+2020-01-19,2020-01-20,Poor,Poor,Poor,Very Poor
+2020-01-20,2020-01-21,Very Poor,Very Poor,Very Poor,Very Poor
+2020-01-21,2020-01-22,Very Poor,Very Poor,Very Poor,Very Poor
+2020-01-22,2020-01-23,Poor,Very Poor,Very Poor,Very Poor
+2020-01-23,2020-01-24,Moderate,Moderate,Moderate,Very Poor
+2020-01-24,2020-01-25,Poor,Moderate,Moderate,Poor
+2020-01-25,2020-01-26,Very Poor,Poor,Very Poor,Poor
+2020-01-26,2020-01-27,Very Poor,Very Poor,Very Poor,Very Poor
+2020-01-27,2020-01-28,Very Poor,Very Poor,Very Poor,Very Poor
+2020-01-28,2020-01-29,Poor,Poor,Poor,Very Poor
+2020-01-29,2020-01-30,Moderate,Moderate,Moderate,Poor
+2020-01-30,2020-01-31,Poor,Poor,Poor,Poor
+2020-01-31,2020-02-01,Poor,Moderate,Poor,Poor
+2020-02-01,2020-02-02,Poor,Poor,Poor,Poor
+2020-02-02,2020-02-03,Poor,Poor,Poor,Poor
+2020-02-03,2020-02-04,Very Poor,Very Poor,Very Poor,Very Poor
+2020-02-04,2020-02-05,Very Poor,Very Poor,Very Poor,Very Poor
+2020-02-05,2020-02-06,Poor,Very Poor,Very Poor,Very Poor
+2020-02-06,2020-02-07,Very Poor,Poor,Poor,Very Poor
+2020-02-07,2020-02-08,Very Poor,Very Poor,Very Poor,Very Poor
+2020-02-08,2020-02-09,Very Poor,Very Poor,Very Poor,Very Poor
+2020-02-09,2020-02-10,Very Poor,Very Poor,Very Poor,Very Poor
+2020-02-10,2020-02-11,Very Poor,Very Poor,Very Poor,Very Poor
+2020-02-11,2020-02-12,Very Poor,Very Poor,Very Poor,Very Poor
+2020-02-12,2020-02-13,Poor,Very Poor,Very Poor,Very Poor
+2020-02-13,2020-02-14,Moderate,Poor,Poor,Very Poor
+2020-02-14,2020-02-15,Moderate,Moderate,Moderate,Poor
+2020-02-15,2020-02-16,Poor,Poor,Poor,Poor
+2020-02-16,2020-02-17,Very Poor,Poor,Very Poor,Poor
+2020-02-17,2020-02-18,Poor,Very Poor,Very Poor,Very Poor
+2020-02-18,2020-02-19,Poor,Very Poor,Poor,Very Poor
+2020-02-19,2020-02-20,Poor,Very Poor,Very Poor,Very Poor
+2020-02-20,2020-02-21,Moderate,Poor,Poor,Poor
+2020-02-21,2020-02-22,Moderate,Moderate,Moderate,Moderate
+2020-02-22,2020-02-23,Poor,Moderate,Moderate,Moderate
+2020-02-23,2020-02-24,Moderate,Poor,Poor,Poor
+2020-02-24,2020-02-25,Poor,Moderate,Moderate,Moderate
+2020-02-25,2020-02-26,Very Poor,Poor,Very Poor,Poor
+2020-02-26,2020-02-27,Poor,Poor,Very Poor,Very Poor
+2020-02-27,2020-02-28,Poor,Poor,Poor,Poor
+2020-02-28,2020-02-29,Moderate,Moderate,Poor,Poor
+2020-02-29,2020-03-01,Moderate,Moderate,Moderate,Moderate
+2020-03-01,2020-03-02,Moderate,Moderate,Moderate,Moderate
+2020-03-02,2020-03-03,Poor,Poor,Poor,Poor
+2020-03-03,2020-03-04,Moderate,Poor,Poor,Poor
+2020-03-04,2020-03-05,Moderate,Poor,Poor,Poor
+2020-03-05,2020-03-06,Satisfactory,Moderate,Satisfactory,Moderate
+2020-03-06,2020-03-07,Satisfactory,Moderate,Satisfactory,Moderate
+2020-03-07,2020-03-08,Moderate,Moderate,Satisfactory,Moderate
+2020-03-08,2020-03-09,Moderate,Moderate,Moderate,Moderate
+2020-03-09,2020-03-10,Moderate,Moderate,Satisfactory,Moderate
+2020-03-10,2020-03-11,Moderate,Moderate,Poor,Moderate
+2020-03-11,2020-03-12,Moderate,Moderate,Satisfactory,Moderate
+2020-03-12,2020-03-13,Moderate,Moderate,Satisfactory,Moderate
+2020-03-13,2020-03-14,Moderate,Moderate,Moderate,Moderate
+2020-03-14,2020-03-15,Moderate,Moderate,Moderate,Moderate
+2020-03-15,2020-03-16,Moderate,Moderate,Satisfactory,Moderate
+2020-03-16,2020-03-17,Moderate,Moderate,Satisfactory,Moderate
+2020-03-17,2020-03-18,Moderate,Moderate,Moderate,Moderate
+2020-03-18,2020-03-19,Moderate,Moderate,Moderate,Moderate
+2020-03-19,2020-03-20,Poor,Poor,Poor,Poor
+2020-03-20,2020-03-21,Poor,Poor,Poor,Poor
+2020-03-21,2020-03-22,Moderate,Moderate,Poor,Poor
+2020-03-22,2020-03-23,Moderate,Moderate,Moderate,Poor
+2020-03-23,2020-03-24,Moderate,Moderate,Moderate,Moderate
+2020-03-24,2020-03-25,Satisfactory,Moderate,Moderate,Moderate
+2020-03-25,2020-03-26,Satisfactory,Moderate,Satisfactory,Moderate
+2020-03-26,2020-03-27,Satisfactory,Moderate,Moderate,Moderate
+2020-03-27,2020-03-28,Satisfactory,Moderate,Satisfactory,Satisfactory
+2020-03-28,2020-03-29,Satisfactory,Moderate,Satisfactory,Satisfactory
+2020-03-29,2020-03-30,Satisfactory,Moderate,Satisfactory,Satisfactory
+2020-03-30,2020-03-31,Satisfactory,Moderate,Satisfactory,Satisfactory
+2020-03-31,2020-04-01,Satisfactory,Moderate,Satisfactory,Satisfactory
+2020-04-01,2020-04-02,Satisfactory,Moderate,Satisfactory,Satisfactory
+2020-04-02,2020-04-03,Satisfactory,Moderate,Satisfactory,Satisfactory
+2020-04-03,2020-04-04,Satisfactory,Moderate,Moderate,Satisfactory
+2020-04-04,2020-04-05,Moderate,Moderate,Moderate,Moderate
+2020-04-05,2020-04-06,Moderate,Moderate,Moderate,Moderate
+2020-04-06,2020-04-07,Satisfactory,Moderate,Moderate,Moderate
+2020-04-07,2020-04-08,Satisfactory,Moderate,Moderate,Satisfactory
+2020-04-08,2020-04-09,Satisfactory,Moderate,Satisfactory,Satisfactory
+2020-04-09,2020-04-10,Moderate,Moderate,Moderate,Moderate
+2020-04-10,2020-04-11,Moderate,Moderate,Moderate,Moderate
+2020-04-11,2020-04-12,Moderate,Moderate,Moderate,Moderate
+2020-04-12,2020-04-13,Moderate,Moderate,Moderate,Moderate
+2020-04-13,2020-04-14,Moderate,Moderate,Satisfactory,Moderate
+2020-04-14,2020-04-15,Moderate,Moderate,Moderate,Moderate
+2020-04-15,2020-04-16,Moderate,Moderate,Moderate,Moderate
+2020-04-16,2020-04-17,Moderate,Moderate,Moderate,Moderate
+2020-04-17,2020-04-18,Moderate,Moderate,Satisfactory,Moderate
+2020-04-18,2020-04-19,Satisfactory,Moderate,Satisfactory,Satisfactory
+2020-04-19,2020-04-20,Moderate,Moderate,Moderate,Moderate
+2020-04-20,2020-04-21,Moderate,Moderate,Moderate,Moderate
+2020-04-21,2020-04-22,Moderate,Moderate,Moderate,Moderate
+2020-04-22,2020-04-23,Moderate,Moderate,Moderate,Moderate
+2020-04-23,2020-04-24,Moderate,Moderate,Moderate,Moderate
+2020-04-24,2020-04-25,Moderate,Moderate,Moderate,Moderate
+2020-04-25,2020-04-26,Moderate,Moderate,Satisfactory,Moderate
+2020-04-26,2020-04-27,Satisfactory,Moderate,Moderate,Moderate
+2020-04-27,2020-04-28,Moderate,Moderate,Moderate,Moderate
+2020-04-28,2020-04-29,Moderate,Moderate,Moderate,Moderate
+2020-04-29,2020-04-30,Moderate,Moderate,Moderate,Moderate
+2020-04-30,2020-05-01,Moderate,Moderate,Moderate,Moderate
+2020-05-01,2020-05-02,Moderate,Moderate,Moderate,Moderate
+2020-05-02,2020-05-03,Moderate,Moderate,Satisfactory,Moderate
+2020-05-03,2020-05-04,Satisfactory,Moderate,Satisfactory,Moderate
+2020-05-04,2020-05-05,Moderate,Moderate,Satisfactory,Moderate
+2020-05-05,2020-05-06,Moderate,Moderate,Moderate,Moderate
+2020-05-06,2020-05-07,Moderate,Moderate,Moderate,Moderate
+2020-05-07,2020-05-08,Moderate,Moderate,Satisfactory,Moderate
+2020-05-08,2020-05-09,Moderate,Moderate,Moderate,Moderate
+2020-05-09,2020-05-10,Moderate,Moderate,Moderate,Moderate
+2020-05-10,2020-05-11,Moderate,Moderate,Moderate,Moderate
+2020-05-11,2020-05-12,Moderate,Moderate,Moderate,Moderate
+2020-05-12,2020-05-13,Moderate,Moderate,Moderate,Moderate
+2020-05-13,2020-05-14,Moderate,Moderate,Moderate,Moderate
+2020-05-14,2020-05-15,Moderate,Moderate,Moderate,Moderate
+2020-05-15,2020-05-16,Moderate,Moderate,Moderate,Moderate
+2020-05-16,2020-05-17,Poor,Moderate,Poor,Moderate
+2020-05-17,2020-05-18,Poor,Poor,Poor,Poor
+2020-05-18,2020-05-19,Poor,Poor,Poor,Poor
+2020-05-19,2020-05-20,Moderate,Poor,Poor,Poor
+2020-05-20,2020-05-21,Moderate,Moderate,Moderate,Moderate
+2020-05-21,2020-05-22,Moderate,Moderate,Moderate,Moderate
+2020-05-22,2020-05-23,Poor,Poor,Poor,Poor
+2020-05-23,2020-05-24,Moderate,Poor,Moderate,Poor
+2020-05-24,2020-05-25,Moderate,Moderate,Moderate,Moderate
+2020-05-25,2020-05-26,Moderate,Moderate,Moderate,Moderate
+2020-05-26,2020-05-27,Moderate,Moderate,Satisfactory,Moderate
+2020-05-27,2020-05-28,Moderate,Moderate,Moderate,Moderate
+2020-05-28,2020-05-29,Moderate,Moderate,Moderate,Moderate
+2020-05-29,2020-05-30,Satisfactory,Moderate,Satisfactory,Moderate
+2020-05-30,2020-05-31,Satisfactory,Moderate,Satisfactory,Moderate
+2020-05-31,2020-06-01,Satisfactory,Moderate,Moderate,Moderate
+2020-06-01,2020-06-02,Moderate,Moderate,Moderate,Moderate
+2020-06-02,2020-06-03,Moderate,Moderate,Moderate,Moderate
+2020-06-03,2020-06-04,Moderate,Moderate,Moderate,Moderate
+2020-06-04,2020-06-05,Moderate,Moderate,Moderate,Moderate
+2020-06-05,2020-06-06,Moderate,Moderate,Moderate,Moderate
+2020-06-06,2020-06-07,Moderate,Moderate,Satisfactory,Moderate
+2020-06-07,2020-06-08,Moderate,Moderate,Satisfactory,Moderate
+2020-06-08,2020-06-09,Moderate,Moderate,Moderate,Moderate
+2020-06-09,2020-06-10,Moderate,Moderate,Moderate,Moderate
+2020-06-10,2020-06-11,Moderate,Moderate,Moderate,Moderate
+2020-06-11,2020-06-12,Moderate,Moderate,Moderate,Moderate
+2020-06-12,2020-06-13,Moderate,Moderate,Moderate,Moderate
+2020-06-13,2020-06-14,Moderate,Moderate,Moderate,Moderate
+2020-06-14,2020-06-15,Moderate,Moderate,Moderate,Moderate
+2020-06-15,2020-06-16,Moderate,Moderate,Moderate,Moderate
+2020-06-16,2020-06-17,Moderate,Moderate,Moderate,Moderate
+2020-06-17,2020-06-18,Moderate,Moderate,Satisfactory,Moderate
+2020-06-18,2020-06-19,Moderate,Moderate,Moderate,Moderate
+2020-06-19,2020-06-20,Moderate,Moderate,Moderate,Moderate
+2020-06-20,2020-06-21,Moderate,Moderate,Satisfactory,Moderate
+2020-06-21,2020-06-22,Moderate,Moderate,Moderate,Moderate
+2020-06-22,2020-06-23,Satisfactory,Moderate,Moderate,Moderate
+2020-06-23,2020-06-24,Satisfactory,Moderate,Satisfactory,Satisfactory
+2020-06-24,2020-06-25,Satisfactory,Moderate,Satisfactory,Satisfactory
+2020-06-25,2020-06-26,Moderate,Satisfactory,Moderate,Satisfactory
+2020-06-26,2020-06-27,Moderate,Moderate,Moderate,Moderate
+2020-06-27,2020-06-28,Moderate,Satisfactory,Moderate,Moderate
+2020-06-28,2020-06-29,Poor,Moderate,Moderate,Moderate
+2020-06-29,2020-06-30,Moderate,Satisfactory,Moderate,Moderate
+2020-06-30,2020-07-01,Moderate,Satisfactory,Moderate,Moderate

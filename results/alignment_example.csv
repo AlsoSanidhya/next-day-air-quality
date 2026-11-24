@@ -1,0 +1,2 @@
+origin_date,lag1_date,lag1_value,today_value,target_date,tomorrow_value
+2015-01-08,2015-01-07,217.87,229.9,2015-01-09,201.66
