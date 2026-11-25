@@ -17,63 +17,85 @@ ROOT = Path(__file__).resolve().parent
 CITY = "Delhi"
 TEST_START = "2020-01-01"
 FEATURES = ["PM2.5", "PM10", "NO2", "CO", "O3", "AQI"]
+ONE_DAY = pd.Timedelta(days=1)
 
-
-def main():
-    # One row per calendar day ensures shift(-1) means tomorrow.
-    data = pd.read_csv(ROOT / "data" / "raw" / "city_day.csv")
-    data = data[data["City"] == CITY].copy()
+def load_daily_readings():
+    """Load the chosen city's readings in calendar order."""
+    csv_path = ROOT / "data" / "raw" / "city_day.csv"
+    all_cities = pd.read_csv(csv_path)
+    data = all_cities[all_cities["City"] == CITY].copy()
     if data.empty:
         raise ValueError(f"No data found for {CITY}.")
     data["Date"] = pd.to_datetime(data["Date"])
-    data = data.sort_values("Date").set_index("Date")
+    data = data.sort_values("Date")
+    data = data.set_index("Date")
     if data.index.has_duplicates:
         raise ValueError("Duplicate dates must be resolved first.")
-    data = data.reindex(pd.date_range(data.index.min(), data.index.max(), freq="D"))
+    # Include missing dates so the next row always represents the next day.
+    calendar = pd.date_range(data.index.min(), data.index.max(), freq="D")
+    return data.reindex(calendar)
 
-    # X contains today's readings; y contains the observed AQI tomorrow.
+
+def main():
+    data = load_daily_readings()
+
+    # 1. Pair today's inputs with tomorrow's measured AQI.
     data["Tomorrow_AQI"] = data["AQI"].shift(-1)
-    data["Target_date"] = data.index + pd.Timedelta(days=1)
+    data["Target_date"] = data.index + ONE_DAY
     samples = data.dropna(subset=["Tomorrow_AQI"]).copy()
+
+    # Split by the date we predict. X is the input and y is the answer.
     train = samples[samples["Target_date"] < TEST_START]
     test = samples[samples["Target_date"] >= TEST_START]
     if train.empty or test.empty:
         raise ValueError("The date cutoff must leave both training and test data.")
-    X_train, y_train = train[FEATURES], train["Tomorrow_AQI"]
-    X_test, y_test = test[FEATURES], test["Tomorrow_AQI"]
+    X_train = train[FEATURES]
+    y_train = train["Tomorrow_AQI"]
+    X_test = test[FEATURES]
+    y_test = test["Tomorrow_AQI"]
 
+    # 2. Train both models and compare them on earlier validation dates.
     models = {
         "Decision Tree": DecisionTreeRegressor(max_depth=5, random_state=42),
         "Random Forest": RandomForestRegressor(
             n_estimators=100, max_depth=8, random_state=42
         ),
     }
-    results = []
+    model_scores = []
     predictions = pd.DataFrame({
         "Target_date": test["Target_date"].to_numpy(),
         "Actual_AQI": y_test.to_numpy(),
     })
-    best_model, best_name, best_cv_mae = None, "", float("inf")
-    # Select a model on earlier data, keeping the final test period separate.
+    best_model = None
+    best_name = ""
+    best_cv_mae = float("inf")
     cv = TimeSeriesSplit(n_splits=3, gap=1)
     for name, estimator in models.items():
+        # Fit the median filler on each training fold along with the model.
         model = make_pipeline(SimpleImputer(strategy="median"), estimator)
-        cv_mae = -cross_val_score(
+        negative_errors = cross_val_score(
             model, X_train, y_train, cv=cv, scoring="neg_mean_absolute_error"
-        ).mean()
+        )
+        cv_mae = -negative_errors.mean()
+
+        # Refit on all training rows, then measure error on the held-out dates.
         model.fit(X_train, y_train)
         predicted = model.predict(X_test)
         predictions[name] = predicted
-        results.append({
-            "Model": name, "CV_MAE": cv_mae,
+        model_scores.append({
+            "Model": name,
+            "CV_MAE": cv_mae,
             "Test_MAE": mean_absolute_error(y_test, predicted),
             "Test_RMSE": np.sqrt(mean_squared_error(y_test, predicted)),
             "Test_R2": r2_score(y_test, predicted),
         })
         if cv_mae < best_cv_mae:
-            best_model, best_name, best_cv_mae = model, name, cv_mae
+            best_model = model
+            best_name = name
+            best_cv_mae = cv_mae
 
-    results = pd.DataFrame(results)
+    # 3. Save and display the results, then forecast one day ahead.
+    results = pd.DataFrame(model_scores)
     output = ROOT / "results"
     output.mkdir(exist_ok=True)
     results.to_csv(output / "metrics.csv", index=False, lineterminator="\n")
@@ -90,11 +112,14 @@ def main():
     print(f"\nSelected using training-period cross-validation: {best_name}")
 
     last_day = data.index.max()
-    forecast = best_model.predict(data.loc[[last_day], FEATURES])[0]
+    last_day_inputs = data.loc[[last_day], FEATURES]
+    forecast_date = last_day + ONE_DAY
+    forecast = best_model.predict(last_day_inputs)[0]
     print(f"Readings from: {last_day.date()}")
-    print(f"Predicted AQI for {(last_day + pd.Timedelta(days=1)).date()}: {forecast:.2f}")
+    print(f"Predicted AQI for {forecast_date.date()}: {forecast:.2f}")
     print("Historical demonstration; this is not a live forecast for today's date.")
 
+    # 4. Plot actual and predicted AQI on the test dates.
     plt.figure(figsize=(10, 4))
     plt.plot(predictions["Target_date"], predictions["Actual_AQI"], label="Actual AQI")
     plt.plot(predictions["Target_date"], predictions[best_name], label=f"Predicted ({best_name})")
